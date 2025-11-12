@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Справочный центр и вики по серверу Minecraft TochkaCraft. IP, правила, гайды и информация о создателях.">
+    <meta property="og:title" content="TochkaCraft — Справочный центр">
+    <meta property="og:description" content="Вся необходимая информация для игроков сервера TochkaCraft.">
+    <meta property="og:type" content="website">
+    
     <title>TochkaCraft — Справочный центр</title>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,27 +17,35 @@
 </head>
 <body>
 
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
-
+    <div id="preloader"><div class="spinner"></div></div>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
-
     <div class="background-glow"></div>
 
     <div class="container">
         <header>
-            <div class="logo">TochkaCraft</div>
-            <div id="server-status">
-                <div class="status-dot loading"></div>
-                <span class="status-text">Загрузка статуса...</span>
+            <div class="header-top">
+                <div class="logo">TochkaCraft</div>
+                <div class="header-controls">
+                    <div id="server-status">
+                        <div class="status-dot loading"></div>
+                        <span class="status-text">Загрузка...</span>
+                        <div class="player-list-tooltip">
+                            <div id="player-list-container"></div>
+                        </div>
+                    </div>
+                    <button id="theme-switcher" title="Сменить тему">
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </div>
             </div>
             <nav class="tab-nav">
                 <button class="tab-button active" data-tab="main">Главное</button>
                 <button class="tab-button" data-tab="rules">Правила</button>
                 <button class="tab-button" data-tab="wiki">Вики</button>
                 <button class="tab-button" data-tab="guides">Гайды</button>
+                <button class="tab-button" data-tab="creators">О создателях</button>
             </nav>
         </header>
 
@@ -49,103 +63,71 @@
                 <div class="warning">
                     <strong>Проблемы с подключением?</strong> Если не удается войти по одному из IP, попробуйте остальные. Если проблема сохраняется, используйте VPN.
                 </div>
-
-                <div class="recommendations-grid">
-                    <div class="info-card">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                            Сборка модов
-                        </h3>
-                        <p>Для более приятной игры используйте нашу сборку клиентских модов из <a href="https://t.me/tochkacraft" target="_blank" rel="noopener noreferrer">тгк-канала</a>.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
-                            Litematica
-                        </h3>
-                        <p>Рекомендуем мод для строительства по схемам, копирования построек и помощи в масштабных проектах.</p>
-                    </div>
-                </div>
-                
-                <div class="callout-note">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                    <span>Подробные гайды по установке и запуску находятся во вкладке «Гайды».</span>
+                <div class="info-card">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>Рекомендуемые моды</h3>
+                    <p>Для более приятной игры используйте нашу сборку клиентских модов из <a href="https://t.me/tochkacraft" target="_blank" rel="noopener noreferrer">тгк-канала</a>. Она даёт доступ к голосовому чату, мини-карте и улучшает анимации.</p>
+                    <p>Также мы рекомендуем скачать <strong>Litematica</strong> — мод для строительства по схемам и копирования построек.</p>
+                    <p class="note">Подробные объяснения по установке и настройке вы найдёте в разделе «Гайды».</p>
                 </div>
             </section>
 
             <section id="rules" class="tab-content">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    Основные правила
-                </h2>
-                <div class="rules-grid">
-                    <div class="rule-card">Слово админа — закон. Не оспаривайте действия администрации. Баны и муты выдаются по веским причинам и не обсуждаются.</div>
-                    <div class="rule-card forbidden"><strong>Запрещено</strong> использовать читы, скрипты и любое ПО для получения нечестного преимущества.</div>
-                    <div class="rule-card forbidden"><strong>Запрещено</strong> создавать лагомашины и любым способом вредить работе сервера.</div>
-                    <div class="rule-card forbidden"><strong>Запрещено</strong> флудить, спамить и рекламировать сторонние проекты в чате.</div>
-                    <div class="rule-card forbidden"><strong>Запрещено</strong> блокировать порталы в Край или строить ловушки для игроков.</div>
-                    <div class="rule-card forbidden"><strong>Запрещены</strong> любые оскорбления, разжигание ненависти и обсуждение политики.</div>
-                    <div class="rule-card">События, несущие риск для построек или прогресса игрока, должны быть заранее с ним согласованы. Игрок должен быть уведомлен и дать свое согласие на участие.</div>
-                </div>
+                <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Основные правила</h2>
+                <div id="rules-container" class="rules-grid"></div>
             </section>
 
             <section id="wiki" class="tab-content">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                    Вики сервера
-                </h2>
+                <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Вики сервера</h2>
                 <p>Здесь будет собрана вся история, информация о ключевых постройках и событиях сервера. Раздел в разработке.</p>
                 <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/400x250.png/111317/89b4fa?text=Скриншот+1" alt="Описание изображения 1">
-                        <div class="gallery-caption">Спавн сервера</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/400x250.png/111317/89b4fa?text=Скриншот+2" alt="Описание изображения 2">
-                        <div class="gallery-caption">Город игроков</div>
-                    </div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x250.png/111317/89b4fa?text=Скриншот+1" alt="Описание изображения 1"><div class="gallery-caption">Спавн сервера</div></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x250.png/111317/89b4fa?text=Скриншот+2" alt="Описание изображения 2"><div class="gallery-caption">Город игроков</div></div>
                 </div>
             </section>
 
             <section id="guides" class="tab-content">
+                <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Гайды и руководства</h2>
+                <div id="guides-container" class="accordion"></div>
+            </section>
+
+            <section id="creators" class="tab-content">
                 <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                    Гайды и руководства
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Создатели сервера
                 </h2>
-                <div class="accordion">
-                    <div class="guide-item">
-                        <button class="guide-title">Гайд на Litematica</button>
-                        <div class="guide-content">
-                            <ol class="guide-steps">
-                                <li>Скачайте саму Litematica с сайта <a href="https://minecraft-inside.ru/mods/134696-litematica.html" target="_blank" rel="noopener noreferrer">Minecraft Inside</a>.</li>
-                                <li>Откройте файлы вашего лаунчера (TLauncher/Legacy) и найдите там папку <code>mods</code>.</li>
-                                <li>Закиньте в неё скачанный файл мода.</li>
-                                <li>Запустите Minecraft и зайдите на сервер.</li>
-                                <li>В файлах игры у вас появится папка <code>schematics</code>, в которую вы можете закидывать скачанные схемы.</li>
-                            </ol>
-                        </div>
+                <div class="creators-section">
+                    <h3>Администрация</h3>
+                    <div class="admin-list">
+                        <div class="creator-item"><strong>Garry</strong> — @garryfriskov</div>
+                        <div class="creator-item"><strong>Frog</strong> — @Ggdevbv</div>
                     </div>
-                    <div class="guide-item">
-                        <button class="guide-title">Гайд на нашу сборку модов</button>
-                        <div class="guide-content">
-                            <ol class="guide-steps">
-                                <li>Откройте файлы вашего лаунчера и найдите папку <code>mods</code>.</li>
-                                <li>Скопируйте все моды из скачанного архива с нашей сборкой.</li>
-                                <li>Вставьте скопированные файлы в папку <code>mods</code>.</li>
-                                <li>Зайдите в мир и настройте моды:</li>
-                                <li>Нажмите <code>V</code>, чтобы настроить голосовой чат (VoiceMod).</li>
-                                <li>Нажмите <code>M</code>, чтобы открыть настройки мини-карты.</li>
-                            </ol>
-                        </div>
+                </div>
+                <div class="creators-section">
+                    <h3>Строители спавна</h3>
+                    <div class="builder-list">
+                        <span class="builder-item">Наилёныш</span>
+                        <span class="builder-item">Зевабрик</span>
+                        <span class="builder-item">Гнидкинс</span>
+                        <span class="builder-item">Toad</span>
+                        <span class="builder-item">Frog</span>
+                        <span class="builder-item">Garry</span>
+                        <span class="builder-item">Тарканище</span>
+                        <span class="builder-item">Мищ</span>
                     </div>
+                </div>
+                <div class="info-card" style="margin-top: 40px;">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 21h16"></path><path d="M10 3v18"></path><path d="M14 3v18"></path><path d="M8 21v-9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v9"></path></svg>
+                        Важные постройки
+                    </h3>
+                    <p>Пока что таких нету, но всегда можно быть первым!</p>
                 </div>
             </section>
         </main>
     </div>
 
     <div id="toast-notification" class="toast"></div>
-    
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
+    <script defer src="https://unpkg.com/scrollreveal"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
